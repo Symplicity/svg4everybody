@@ -18,7 +18,7 @@
             if (4 === xhr.readyState) {
                 var x = document.createElement("x");
                 x.innerHTML = xhr.responseText, xhr.s.splice(0).map(function(array) {
-                    embed(array[0], x.querySelector("#" + array[1].replace(/(\W)/g, "\\$1")));
+                    array[1] && embed(array[0], x.querySelector("#" + array[1].replace(/(\W)/g, "\\$1")));
                 });
             }
         }, xhr.onreadystatechange();
